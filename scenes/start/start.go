@@ -22,6 +22,7 @@ func (scene *Scene) Load(ctx engine.Context) {
 }
 
 func (scene *Scene) Update(ctx engine.Context) (unload bool) {
+	return true
 	scene.selectedMenuItem =
 		updateSelectedMenuItem(scene.selectedMenuItem, len(scene.menuItems)-1)
 
@@ -36,6 +37,7 @@ func (scene *Scene) Update(ctx engine.Context) (unload bool) {
 
 // called when update returns true
 func (scene *Scene) Unload(ctx engine.Context) (nextSceneID string) {
+	return "play"
 	if scene.menuItems[scene.selectedMenuItem] == "Exit" {
 		// exitting on web will just reload this scene
 		if ctx.IsWeb {

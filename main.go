@@ -1,6 +1,7 @@
 package main
 
 import (
+	c "GameFrameworkTM/components"
 	"GameFrameworkTM/engine"
 	"GameFrameworkTM/scenes"
 	"fmt"
@@ -19,7 +20,8 @@ var ASSETS fs.FS
 func main() {
 	rl.SetTraceLogLevel(rl.LogError)
 	err := engine.Run(scenes.Registered, engine.Config{
-		WindowTitle: "change this in main.go",
+		WindowTitle:       "Sabzi Wala Sysiphus",
+		VirtualResolution: c.V2(360, 240),
 	}, ASSETS)
 	if err != nil {
 		fmt.Println(err)
